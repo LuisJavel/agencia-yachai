@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YachayIA Digital - Agency Platform Documentation
 
-## Getting Started
+Welcome to the official repository of **YachayIA Digital**. This platform is built with a focus on high performance, premium aesthetics, and seamless AI integration.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Frontend**: Next.js 14+ (App Router)
+- **Styling**: Tailwind CSS 4.0 (for ultra-fast runtime CSS)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Backend**: Next.js API Routes (Node.js)
+- **AI**: OpenAI GPT-4 Integrated Widget
+
+## 🛠️ Installation & Development
+
+To run the project locally:
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🤖 Chatbot Manual: "Yachay Assistant"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The chatbot is located in `src/components/Chatbot.tsx`. 
 
-## Learn More
+### Key Features:
+- **Bilingual Initial Greeting**: "Welcome to YachayIA Digital. Alli shamushca."
+- **Quick Actions**: Preset buttons for common services (Web, SEO, Automation, Fintech).
+- **Simulated Intelligence**: Currently uses a mock response system that can be easily connected to the `/api/chat` endpoint using the OpenAI SDK.
 
-To learn more about Next.js, take a look at the following resources:
+### Connecting to GPT-4:
+To enable real GPT-4 responses, you need to:
+1. Create an OpenAI API Key.
+2. Setup an environment variable `OPENAI_API_KEY`.
+3. Update the `handleSend` function in `Chatbot.tsx` to fetch from an API Route that calls `openai.chat.completions.create`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📈 Scalability & Maintenance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### SEO Strategy:
+- **Meta Tags**: Managed in `src/app/page.tsx` via the `metadata` object.
+- **Dynamic Sitemap**: Use `next-sitemap` to generate the `sitemap.xml` automatically on every build.
+- **Blog Content**: The blog is currently a preview. For scalability, we recommend integrating **Sanity.io** or **Contentful** through the `src/components/BlogPreview.tsx` component.
 
-## Deploy on Vercel
+### Automations (CRM Implementation):
+- The contact form is located in `src/components/Footer.tsx`.
+- **Zapier/Make Integration**: We recommend creating a webhook URL in Zapier and calling it inside the form's `onSubmit` handler to sync leads to HubSpot or Zoho CRM.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Fintech API Security:
+- Current endpoint: `/api/fintech/v1`.
+- For production, implement **NextAuth.js** or **Supabase Auth** to handle OAuth2 flows and protect the financial endpoints.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌍 Cultural Note: "Alli Shamushca"
+YachayIA Digital celebrates its Andean heritage. The Kichwa greeting "Alli shamushca" means "Welcome", and "Yachay" stands for "Knowledge/Learning". This identity should be preserved in all future design iterations.
+
+---
+
+*Desarrollado con ❤️ por Antigravity para YachayIA Digital.*
