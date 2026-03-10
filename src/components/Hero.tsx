@@ -43,8 +43,8 @@ export default function Hero() {
                         variants={itemVariants}
                         className="text-5xl md:text-8xl font-black tracking-tighter text-white"
                     >
-                        Transformación <span className="gradient-text">Digital con</span>,<br />
-                        arraigado en <span className="text-blue-500">Sabiduría</span>.
+                        Transformación <span className="gradient-text">Digital y</span><br />
+                        <span className="text-blue-500">asesoría IA</span>.
                     </motion.h1>
 
                     <motion.p
